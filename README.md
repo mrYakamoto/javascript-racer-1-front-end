@@ -121,6 +121,40 @@ Up until now, we've been using the DOM to store state in the form of HTML. But
 JavaScript memory can be used to store state as well, as long as the user remains
 on the page.
 
+### Release 4: Dynamic Games
+
+In release 0, we had you hard code the length of the game as table data cells. But
+what if the game changed based on a variable set at the top of your JavaScript
+file? like this:
+
+```javascript
+var lengthOfTrack = 30
+```
+
+Your task is to dynamically create the board based on that value. If you're feeling
+adventurous, try to dynamically set the number of available players as well.
+
+### Release 5: Object-Oriented JavaScript
+
+You've been writing your project so far in functional JavaScript, with your variables
+and functions likely defined in the global space. You would never do this in Ruby!
+Can you reorganize your code into objects with limited interfaces, using either
+[Object literal notation][] or [Prototype-based OO][]?
+
+There are many possible ways to architect your program. How many objects should
+know how to query and alter the DOM? Should players be aware of the length of
+the game? Which object should handle dynamic board creation? There aren't any
+"correct" answers to these questions, but make sure you make these decisions
+intentionally.
+
+### Release 6: Testing
+
+JavaScript is a fully featured programming language, and like any language, it
+has its own testing framework. We suggest you try to implement a basic testing
+suite in [Jasmine][], a unit testing framework for JavaScript.
+
+You should download and install [the 2.0.0 standalone distribution](https://github.com/pivotal/jasmine/tree/master/dist) of Jasmine to get
+your tests up and running.
 
 ## Resources
 
@@ -133,3 +167,6 @@ on the page.
 
 [Ruby Racer]: http://socrates.devbootcamp.com/challenges/230
 [normalize.css]: http://necolas.github.com/normalize.css/
+[Object literal notation]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects
+[Prototype-based OO]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_Object_Model
+[Jasmine]: http://jasmine.github.io/2.0/introduction.html
