@@ -2,11 +2,10 @@
 
 ## Learning Competencies
 
-* Define [jQuery][] callback events
-* Change the DOM based on events
-* Write custom event handlers in JavaScript and jQuery
-* Build a pure JavaScript application 
-* Write OO-JavaScript
+* Understanding events and callbacks in JavaScript
+* Traverse and alter the DOM using JavaScript
+* Write custom event handlers in JavaScript
+* Build a pure JavaScript application
 
 ## Summary
 
