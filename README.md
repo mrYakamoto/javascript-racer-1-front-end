@@ -113,14 +113,13 @@ document.onreadystatechange = function() {
 
 ### Release 3: Starting and Winning States
 
-The last bit is to have starting and winning states, so we can restart the game
-and declare a winner when the game is over.  Add these features (starting,
-playing, winning, and restarting) and submit your solution as a pull request
-with at least three files: an HTML file, a CSS file, and a JavaScript file.
-You can have more files, but all CSS and JavaScript should be linked externally
-from the HTML file.
+Now that you have a functioning game, its time to add some more features. You
+need to store starting and winning states so we can restart the game, declare a
+winner, and turn off the keyboard event listeners.
 
-<!-- ## Optimize Your Learning -->
+Up until now, we've been using the DOM to store state in the form of HTML. But
+JavaScript memory can be used to store state as well, as long as the user remains
+on the page.
 
 
 ## Resources
