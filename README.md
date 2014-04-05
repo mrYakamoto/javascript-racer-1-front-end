@@ -88,6 +88,10 @@ update_player_position('player1', 10);
 Store this JavaScript in a separate file and use the JavaScript console to
 debug it and pass in values manually.
 
+How is your JavaScript going to talk to your to HTML? There are many different
+techniques and libraries to help you do it. For this challenge, we suggest using
+.querySelector() and .querySelectorAll() for traversing the DOM.
+
 ### Release 2: Binding to Key Presses
 
 Now we'll make the game interactive!  Bind to the keyup event to detect
