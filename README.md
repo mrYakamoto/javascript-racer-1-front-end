@@ -9,9 +9,8 @@
 
 ## Summary
 
-Let's create a JavaScript-only version of [Ruby Racer][].  For now it will be a
-single html page with no back-end at all.  Later we'll add the ability to save
-high scores and the like by adding a back-end to the application.
+Let's create a JavaScript-only version of [Ruby Racer][].  To keep it simple,
+it will be a single html page with no back-end at all.
 
 Unlike Ruby Racer, the outcome of the game won't be pure chance.  Each player
 will advance their "car" by smashing some key.  For example, player 1 might be
@@ -20,13 +19,18 @@ the "q" key and player 2 might be the "p" key.
 The goal here is to learn more about JavaScript, the DOM, and asynchronous
 event handling.
 
+When you submit your solution as a pull request, you should have at least three
+files: an HTML file, a CSS file, and a JavaScript file. You can have more files,
+but all CSS and JavaScript should be linked externally from the HTML file.
+
 ## Releases
 
 ### Release 0: The Setup
 
-There is no skeleton for this challenge.  You will have to write the HTML, CSS and JavaScript files yourself (and link them all together).  Let's just start with building a simple two-player board.  This will be
-rendered via HTML.  There are a few ways you could do it, e.g., a table that
-looks like:
+There is no skeleton for this challenge.  You will have to write the HTML, CSS and
+JavaScript files yourself (and link them all together).  Let's just start with
+building a simple two-player board.  This will be rendered via HTML.  There are
+a few ways you could do it, e.g., a table that looks like:
 
 ```html
 <table class="racer_table">
