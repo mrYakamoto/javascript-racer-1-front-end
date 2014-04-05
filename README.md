@@ -18,11 +18,8 @@ Unlike Ruby Racer, the outcome of the game won't be pure chance.  Each player
 will advance their "car" by smashing some key.  For example, player 1 might be
 the "q" key and player 2 might be the "p" key.
 
-The goal here is to learn more about JavaScript, jQuery, the DOM, and
-asynchronous event handling.
-
-Before you start, you should read about [jQuery][].  In particular, you should
-understand event handling and callback functions.
+The goal here is to learn more about JavaScript, the DOM, and asynchronous
+event handling.
 
 ## Releases
 
@@ -71,7 +68,7 @@ output; this is just one suggestion.
 
 Make sure you're able to "manually" produce all the board layouts you might
 care about before you jump into the JavaScript.  Whatever way you choose, it
-should be easy for jQuery/JavaScript to manipulate, so keep that in mind.
+should be easy for JavaScript to manipulate, so keep that in mind.
 
 Use something like [normalize.css][] to enable sane default styles.
 
@@ -93,21 +90,18 @@ debug it and pass in values manually.
 
 ### Release 2: Binding to Key Presses
 
-Now we'll make the game interactive!  Bind to the [keyup][] event to detect
-when a player has "pressed" a key.  We don't bind to the [keydown][] or
-[keypress][] events because those events fire when the keyboard repeats the
+Now we'll make the game interactive!  Bind to the keyup event to detect
+when a player has "pressed" a key.  We don't bind to the keydown or
+keypress events because those events fire when the keyboard repeats the
 key, whereas the keyup event doesn't.
 
 It'd be a boring game if you could just hold the key and go.  You want to bind
 to the `document`, like so:
 
 ```javascript
-$(document).ready(function() {
-  $(document).on('keyup', function(event) {
-    // Detect which key was pressed and call the appropriate function
-    // Google "jquery keyup what key was pressed" if you don't know how
-  });
-});
+document.onreadystatechange = function() {
+  document.addEventListener('keyup', someFunction, false)
+}
 ```
 
 ### Release 3: Starting and Winning States
@@ -125,16 +119,11 @@ from the HTML file.
 ## Resources
 
 * [Ruby Racer][]
-* [jQuery][]
 * [normalize.css][]
-* [Moxilla documentation for: keyup][keyup]
-* [Moxilla documentation for: keydown][keydown]
-* [Moxilla documentation for: keypress][keypress]
+* [Moxilla documentation for: keyup](https://developer.mozilla.org/en-US/docs/Web/Reference/Events/keyup)
+* [Moxilla documentation for: keydown](https://developer.mozilla.org/en-US/docs/Web/Reference/Events/keydown)
+* [Moxilla documentation for: keypress](https://developer.mozilla.org/en-US/docs/Web/Reference/Events/keypress)
 
 
 [Ruby Racer]: http://socrates.devbootcamp.com/challenges/230
-[jQuery]: http://learn.jquery.com/about-jquery/
 [normalize.css]: http://necolas.github.com/normalize.css/
-[keyup]: http://api.jquery.com/keyup/
-[keydown]: http://api.jquery.com/keydown/
-[keypress]: http://api.jquery.com/keypress/
