@@ -2,35 +2,35 @@
 
 ## Learning Competencies
 
-* Define [jQuery][] callback events
-* Change the DOM based on events
-* Write custom event handlers in JavaScript and jQuery
-* Build a pure JavaScript application 
-* Write OO-JavaScript
+* Understanding events and callbacks in JavaScript
+* Traverse and alter the DOM using JavaScript
+* Write custom event handlers in JavaScript
+* Build a pure JavaScript application
 
 ## Summary
 
-Let's create a JavaScript-only version of [Ruby Racer][].  For now it will be a
-single html page with no back-end at all.  Later we'll add the ability to save
-high scores and the like by adding a back-end to the application.
+Let's create a JavaScript-only version of [Ruby Racer][].  To keep it simple,
+it will be a single html page with no back-end at all.
 
 Unlike Ruby Racer, the outcome of the game won't be pure chance.  Each player
 will advance their "car" by smashing some key.  For example, player 1 might be
 the "q" key and player 2 might be the "p" key.
 
-The goal here is to learn more about JavaScript, jQuery, the DOM, and
-asynchronous event handling.
+The goal here is to learn more about JavaScript, the DOM, and asynchronous
+event handling.
 
-Before you start, you should read about [jQuery][].  In particular, you should
-understand event handling and callback functions.
+When you submit your solution as a pull request, you should have at least three
+files: an HTML file, a CSS file, and a JavaScript file. You can have more files,
+but all CSS and JavaScript should be linked externally from the HTML file.
 
 ## Releases
 
 ### Release 0: The Setup
 
-There is no skeleton for this challenge.  You will have to write the HTML, CSS and JavaScript files yourself (and link them all together).  Let's just start with building a simple two-player board.  This will be
-rendered via HTML.  There are a few ways you could do it, e.g., a table that
-looks like:
+There is no skeleton for this challenge.  You will have to write the HTML, CSS and
+JavaScript files yourself (and link them all together).  Let's just start with
+building a simple two-player board.  This will be rendered via HTML.  There are
+a few ways you could do it, e.g., a table that looks like:
 
 ```html
 <table class="racer_table">
@@ -71,7 +71,7 @@ output; this is just one suggestion.
 
 Make sure you're able to "manually" produce all the board layouts you might
 care about before you jump into the JavaScript.  Whatever way you choose, it
-should be easy for jQuery/JavaScript to manipulate, so keep that in mind.
+should be easy for JavaScript to manipulate, so keep that in mind.
 
 Use something like [normalize.css][] to enable sane default styles.
 
@@ -91,50 +91,82 @@ update_player_position('player1', 10);
 Store this JavaScript in a separate file and use the JavaScript console to
 debug it and pass in values manually.
 
+How is your JavaScript going to talk to your to HTML? There are many different
+techniques and libraries to help you do it. For this challenge, we suggest using
+.querySelector() and .querySelectorAll() for traversing the DOM.
+
 ### Release 2: Binding to Key Presses
 
-Now we'll make the game interactive!  Bind to the [keyup][] event to detect
-when a player has "pressed" a key.  We don't bind to the [keydown][] or
-[keypress][] events because those events fire when the keyboard repeats the
+Now we'll make the game interactive!  Bind to the keyup event to detect
+when a player has "pressed" a key.  We don't bind to the keydown or
+keypress events because those events fire when the keyboard repeats the
 key, whereas the keyup event doesn't.
 
 It'd be a boring game if you could just hold the key and go.  You want to bind
 to the `document`, like so:
 
 ```javascript
-$(document).ready(function() {
-  $(document).on('keyup', function(event) {
-    // Detect which key was pressed and call the appropriate function
-    // Google "jquery keyup what key was pressed" if you don't know how
-  });
-});
+document.onreadystatechange = function() {
+  document.addEventListener('keyup', someFunction, false)
+}
 ```
 
 ### Release 3: Starting and Winning States
 
-The last bit is to have starting and winning states, so we can restart the game
-and declare a winner when the game is over.  Add these features (starting,
-playing, winning, and restarting) and submit your solution as a pull request
-with at least three files: an HTML file, a CSS file, and a JavaScript file.
-You can have more files, but all CSS and JavaScript should be linked externally
-from the HTML file.
+Now that you have a functioning game, its time to add some more features. You
+need to store starting and winning states so we can restart the game, declare a
+winner, and turn off the keyboard event listeners.
 
-<!-- ## Optimize Your Learning -->
+Up until now, we've been using the DOM to store state in the form of HTML. But
+JavaScript memory can be used to store state as well, as long as the user remains
+on the page.
 
+### Release 4: Dynamic Games
+
+In release 0, we had you hard code the length of the game as table data cells. But
+what if the game changed based on a variable set at the top of your JavaScript
+file? like this:
+
+```javascript
+var lengthOfTrack = 30
+```
+
+Your task is to dynamically create the board based on that value. If you're feeling
+adventurous, try to dynamically set the number of available players as well.
+
+### Release 5: Object-Oriented JavaScript
+
+You've been writing your project so far in functional JavaScript, with your variables
+and functions likely defined in the global space. You would never do this in Ruby!
+Can you reorganize your code into objects with limited interfaces, using either
+[Object literal notation][] or [Prototype-based OO][]?
+
+There are many possible ways to architect your program. How many objects should
+know how to query and alter the DOM? Should players be aware of the length of
+the game? Which object should handle dynamic board creation? There aren't any
+"correct" answers to these questions, but make sure you make these decisions
+intentionally.
+
+### Release 6: Testing
+
+JavaScript is a fully featured programming language, and like any language, it
+has its own testing framework. We suggest you try to implement a basic testing
+suite in [Jasmine][], a unit testing framework for JavaScript.
+
+You should download and install [the 2.0.0 standalone distribution](https://github.com/pivotal/jasmine/tree/master/dist) of Jasmine to get
+your tests up and running.
 
 ## Resources
 
 * [Ruby Racer][]
-* [jQuery][]
 * [normalize.css][]
-* [Moxilla documentation for: keyup][keyup]
-* [Moxilla documentation for: keydown][keydown]
-* [Moxilla documentation for: keypress][keypress]
+* [Moxilla documentation for: keyup](https://developer.mozilla.org/en-US/docs/Web/Reference/Events/keyup)
+* [Moxilla documentation for: keydown](https://developer.mozilla.org/en-US/docs/Web/Reference/Events/keydown)
+* [Moxilla documentation for: keypress](https://developer.mozilla.org/en-US/docs/Web/Reference/Events/keypress)
 
 
 [Ruby Racer]: http://socrates.devbootcamp.com/challenges/230
-[jQuery]: http://learn.jquery.com/about-jquery/
 [normalize.css]: http://necolas.github.com/normalize.css/
-[keyup]: http://api.jquery.com/keyup/
-[keydown]: http://api.jquery.com/keydown/
-[keypress]: http://api.jquery.com/keypress/
+[Object literal notation]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects
+[Prototype-based OO]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_Object_Model
+[Jasmine]: http://jasmine.github.io/2.0/introduction.html
