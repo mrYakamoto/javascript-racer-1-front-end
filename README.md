@@ -93,7 +93,7 @@ debug it and pass in values manually.
 
 How is your JavaScript going to talk to your to HTML? There are many different
 techniques and libraries to help you do it. For this challenge, we suggest using
-.querySelector() and .querySelectorAll() for traversing the DOM.
+[.querySelector()][], [.querySelectorAll()][], and [.addEventListener()][] for traversing the DOM.
 
 ### Release 2: Binding to Key Presses
 
@@ -164,7 +164,9 @@ your tests up and running.
 * [Moxilla documentation for: keydown](https://developer.mozilla.org/en-US/docs/Web/Reference/Events/keydown)
 * [Moxilla documentation for: keypress](https://developer.mozilla.org/en-US/docs/Web/Reference/Events/keypress)
 
-
+[.addEventListener()]: https://developer.mozilla.org/en-US/docs/Web/API/EventTarget.addEventListener
+[.querySelector()]: https://developer.mozilla.org/en-US/docs/Web/API/document.querySelector
+[.querySelectorAll()]: https://developer.mozilla.org/en-US/docs/Web/API/Document.querySelectorAll
 [Ruby Racer]: http://socrates.devbootcamp.com/challenges/230
 [normalize.css]: http://necolas.github.com/normalize.css/
 [Object literal notation]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects
