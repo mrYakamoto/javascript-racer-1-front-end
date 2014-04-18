@@ -77,6 +77,10 @@ Use something like [normalize.css][] to enable sane default styles.
 
 ### Release 1: Add JavaScript
 
+How is your JavaScript going to talk to your to HTML? There are many different
+techniques and libraries to help you do it. For this challenge, we suggest using
+[.querySelector()][], [.querySelectorAll()][], and [.addEventListener()][] for traversing the DOM.
+
 We need some way for JavaScript to update the board state.  Create simple
 JavaScript functions that can update a particular player's position.  You give
 the functions a player position as input and they update the underlying HTML to
@@ -91,9 +95,7 @@ update_player_position('player1', 10);
 Store this JavaScript in a separate file and use the JavaScript console to
 debug it and pass in values manually.
 
-How is your JavaScript going to talk to your to HTML? There are many different
-techniques and libraries to help you do it. For this challenge, we suggest using
-[.querySelector()][], [.querySelectorAll()][], and [.addEventListener()][] for traversing the DOM.
+
 
 ### Release 2: Binding to Key Presses
 
@@ -106,7 +108,7 @@ It'd be a boring game if you could just hold the key and go.  You want to bind
 to the `document`, like so:
 
 ```javascript
-document.onreadystatechange = function() {
+window.onload = function() {
   document.addEventListener('keyup', someFunction, false)
 }
 ```
