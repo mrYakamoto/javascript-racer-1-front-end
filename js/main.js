@@ -2,6 +2,8 @@ var Player = function(playerNum, key) {
     this.playerNum = playerNum;
     this.key = key;
 
+    this.cells = null;
+
     this.initialize();
 };
 
@@ -28,6 +30,7 @@ Player.prototype.attachEventHandler = function() {
 
 Player.prototype.findActiveCell = function() {
     for (var i = 0; i < this.cells.length; i++) {
+        // we use indexOf just in case the element has multiple classes
         if (this.cells[i].className.indexOf('active') > -1)
             return i;
     }
@@ -36,6 +39,7 @@ Player.prototype.findActiveCell = function() {
 Player.prototype.findNextCell = function() {
     var nextCellIndex = this.findActiveCell() + 1;
 
+    // if the next cell exists, return its index; otherwise, return null
     return this.cells[nextCellIndex] ? nextCellIndex : null;
 };
 
@@ -46,6 +50,7 @@ Player.prototype.moveVehicle = function() {
     this.cells[activeCellIndex].className = '';
 
     if (newCellIndex)
+        // use concatenation just in case the element has existing classes
         this.cells[newCellIndex].className += 'active';
     else {
         alert('Player ' + this.playerNum + ' wins!');
