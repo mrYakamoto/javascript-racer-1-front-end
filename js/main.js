@@ -15,8 +15,6 @@ Player.prototype.locateCells = function() {
     // note that children is not supported in older IE; use childNodes and filter out text nodes
     //  instead, if old IE support is required
     this.cells = document.getElementById('player' + this.playerNum + '-strip').children;
-
-    console.log(this.cells);
 };
 
 Player.prototype.attachEventHandler = function() {
@@ -28,18 +26,33 @@ Player.prototype.attachEventHandler = function() {
     });
 };
 
-Player.prototype.calculateNextCell = function() {
+Player.prototype.findActiveCell = function() {
     for (var i = 0; i < this.cells.length; i++) {
         if (this.cells[i].className.indexOf('active') > -1)
-            return i + 1;
+            return i;
     }
 };
 
-Player.prototype.moveVehicle = function() {
-    var newCellIndex = this.calculateNextCell();
+Player.prototype.findNextCell = function() {
+    var nextCellIndex = this.findActiveCell() + 1;
 
-    if (this.cells[newCellIndex])
+    return this.cells[nextCellIndex] ? nextCellIndex : null;
+};
+
+Player.prototype.moveVehicle = function() {
+    var activeCellIndex = this.findActiveCell(),
+        newCellIndex = this.findNextCell();
+
+    this.cells[activeCellIndex].className = '';
+
+    if (newCellIndex)
         this.cells[newCellIndex].className = 'active';
+    else {
+        alert('Player ' + this.playerNum + ' wins!');
+
+        window.location.reload();
+    }
 };
 
 var player1 = new Player(1, 81);
+var player2 = new Player(2, 80);
