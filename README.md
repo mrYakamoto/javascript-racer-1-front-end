@@ -1,3 +1,5 @@
+> Note: this branch was created off the `pocket-gophers` branch
+
 # Javascript Racer 1 Front End
 
 ## Learning Competencies
