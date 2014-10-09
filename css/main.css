@@ -61,11 +61,22 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+#racer-table {
+    width: 100%;
+}
 
+#racer-table td {
+    height: 30px;
+    border: 1px solid gray;
+}
 
+#player1-strip .active {
+    background: green;
+}
 
-
-
+#player2-strip .active {
+    background: blue;
+}
 
 
 
