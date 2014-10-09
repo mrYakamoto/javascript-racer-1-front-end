@@ -46,7 +46,7 @@ Player.prototype.moveVehicle = function() {
     this.cells[activeCellIndex].className = '';
 
     if (newCellIndex)
-        this.cells[newCellIndex].className = 'active';
+        this.cells[newCellIndex].className += 'active';
     else {
         alert('Player ' + this.playerNum + ' wins!');
 
