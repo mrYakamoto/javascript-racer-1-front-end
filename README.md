@@ -170,7 +170,6 @@ your tests up and running.
 [.querySelector()]: https://developer.mozilla.org/en-US/docs/Web/API/document.querySelector
 [.querySelectorAll()]: https://developer.mozilla.org/en-US/docs/Web/API/Document.querySelectorAll
 [Ruby Racer]: ../../../ruby-racer-1-outrageous-fortune-challenge
-[normalize.css]: http://necolas.github.com/normalize.css/
 [Object literal notation]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects
 [Prototype-based OO]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_Object_Model
 [Jasmine]: http://jasmine.github.io/2.0/introduction.html
